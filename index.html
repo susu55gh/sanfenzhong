@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>三分钟</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+  <!-- 首页: 心情选择 -->
+  <div id="page-home" class="page active">
+    <div class="home-greeting" id="greeting"></div>
+    <div class="home-cards" id="mood-cards">
+      <div class="mood-card" data-mood="ok">
+        <span class="mood-emoji">😐</span>
+        <span class="mood-label">还行</span>
+      </div>
+      <div class="mood-card" data-mood="tired">
+        <span class="mood-emoji">😮‍💨</span>
+        <span class="mood-label">有点累</span>
+      </div>
+      <div class="mood-card" data-mood="anxious">
+        <span class="mood-emoji">😰</span>
+        <span class="mood-label">很焦虑</span>
+      </div>
+      <div class="mood-card" data-mood="happy">
+        <span class="mood-emoji">😊</span>
+        <span class="mood-label">挺好的</span>
+      </div>
+    </div>
+    <div class="home-quote" id="home-quote">需要的时候，我都在。</div>
+  </div>
+
+  <!-- 心情确认过渡 -->
+  <div id="page-ack" class="page">
+    <div class="ack-content">
+      <div class="ack-emoji" id="ack-emoji"></div>
+      <div class="ack-text" id="ack-text"></div>
+    </div>
+  </div>
+
+  <!-- 游戏页 -->
+  <div id="page-game" class="page">
+    <div id="game-container"></div>
+  </div>
+
+  <!-- 完成页 -->
+  <div id="page-completion" class="page">
+    <div class="comp-icon">✓</div>
+    <div class="comp-line1" id="comp-line1">你做到了。</div>
+    <div class="comp-line2" id="comp-line2">真的把自己放在了第一位。</div>
+    <div class="comp-duration" id="comp-duration"></div>
+    <div class="comp-quote" id="comp-quote"></div>
+    <div class="comp-dots" id="comp-dots">● ○ ○</div>
+    <div class="comp-skip">轻触跳过</div>
+  </div>
+
+  <!-- 冷却提示 -->
+  <div id="page-rate-limit" class="page">
+    <div class="rate-content">
+      <div class="rate-icon">☕</div>
+      <div class="rate-text" id="rate-text">你刚休息过，去喝杯水吧</div>
+      <div class="rate-sub" id="rate-sub"></div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script src="games/breathing.js"></script>
+<script src="games/tear.js"></script>
+<script src="games/paint.js"></script>
+</body>
+</html>
