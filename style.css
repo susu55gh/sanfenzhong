@@ -115,53 +115,50 @@ html, body {
 }
 
 .mood-emoji {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .mood-emoji svg {
   display: block;
-  animation: iconRest 6s ease-in-out infinite;
 }
-/* 还行：极慢旋转，像 ensō 被微风拂过 */
+/* 还行：缓慢呼吸，平静稳定 */
 .mood-card[data-mood="ok"] .mood-emoji svg {
-  animation: iconBreathe 6s ease-in-out infinite;
+  animation: iconBreathe 5s ease-in-out infinite;
 }
-/* 有点累：轻微下沉，像叶子缓缓落地 */
+/* 有点累：微微下沉，像靠进沙发 */
 .mood-card[data-mood="tired"] .mood-emoji svg {
-  animation: iconSettle 5s ease-in-out infinite;
+  animation: iconSettle 4.5s ease-in-out infinite;
 }
-/* 很焦虑：微弱颤动后归位 */
+/* 很焦虑：细碎抖动，像心里的不安 */
 .mood-card[data-mood="anxious"] .mood-emoji svg {
-  animation: iconTremor 4s ease-in-out infinite;
+  animation: iconTremor 3.5s ease-in-out infinite;
 }
-/* 挺好的：轻快上浮 */
+/* 挺好的：轻轻上浮 */
 .mood-card[data-mood="happy"] .mood-emoji svg {
   animation: iconRise 5s ease-in-out infinite;
 }
 
 @keyframes iconBreathe {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+  50% { transform: scale(1.05); }
 }
 @keyframes iconSettle {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(2px); }
+  50% { transform: translateY(2.5px); }
 }
 @keyframes iconTremor {
   0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(0.8px); }
-  75% { transform: translateX(-0.8px); }
+  15% { transform: translateX(1px) translateY(-0.5px); }
+  35% { transform: translateX(-0.8px) translateY(0.5px); }
+  55% { transform: translateX(0.6px); }
+  75% { transform: translateX(-1px); }
 }
 @keyframes iconRise {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
-}
-@keyframes iconRest {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.04); }
+  50% { transform: translateY(-3px); }
 }
 .mood-label {
   font-size: 15px;
@@ -548,14 +545,14 @@ html, body {
 @media (min-width: 420px) {
   .home-cards { max-width: 340px; }
   .mood-card { padding: 32px 16px; min-height: 120px; }
-  .mood-emoji { width: 52px; height: 52px; }
-  .mood-emoji svg { width: 52px; height: 52px; }
+  .mood-emoji { width: 56px; height: 56px; }
+  .mood-emoji svg { width: 56px; height: 56px; }
 }
 
 @media (max-height: 640px) {
   .home-greeting { font-size: 20px; }
   .home-sub { margin-bottom: 28px; }
   .mood-card { padding: 16px 12px; min-height: 80px; }
-  .mood-emoji { width: 36px; height: 36px; }
-  .mood-emoji svg { width: 36px; height: 36px; }
+  .mood-emoji { width: 40px; height: 40px; }
+  .mood-emoji svg { width: 40px; height: 40px; }
 }
