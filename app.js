@@ -101,7 +101,7 @@ const App = {
     cards.forEach((c) => {
       if (c.dataset.mood === mood) c.classList.add("selected");
     });
-    ackEl.textContent = document.querySelector(`[data-mood="${mood}"] .mood-emoji`).textContent;
+    ackEl.innerHTML = document.querySelector(`[data-mood="${mood}"] .mood-emoji`).innerHTML;
     ackText.textContent = MOOD_ACKS[mood];
     this.switchPage("page-ack");
     await sleep(800);

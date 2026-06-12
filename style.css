@@ -115,8 +115,53 @@ html, body {
 }
 
 .mood-emoji {
-  font-size: 28px;
-  line-height: 1;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mood-emoji svg {
+  display: block;
+  animation: iconRest 6s ease-in-out infinite;
+}
+/* 还行：极慢旋转，像 ensō 被微风拂过 */
+.mood-card[data-mood="ok"] .mood-emoji svg {
+  animation: iconBreathe 6s ease-in-out infinite;
+}
+/* 有点累：轻微下沉，像叶子缓缓落地 */
+.mood-card[data-mood="tired"] .mood-emoji svg {
+  animation: iconSettle 5s ease-in-out infinite;
+}
+/* 很焦虑：微弱颤动后归位 */
+.mood-card[data-mood="anxious"] .mood-emoji svg {
+  animation: iconTremor 4s ease-in-out infinite;
+}
+/* 挺好的：轻快上浮 */
+.mood-card[data-mood="happy"] .mood-emoji svg {
+  animation: iconRise 5s ease-in-out infinite;
+}
+
+@keyframes iconBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+@keyframes iconSettle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+@keyframes iconTremor {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(0.8px); }
+  75% { transform: translateX(-0.8px); }
+}
+@keyframes iconRise {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+@keyframes iconRest {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
 }
 .mood-label {
   font-size: 15px;
@@ -139,9 +184,18 @@ html, body {
   animation: fadeIn 0.5s ease;
 }
 .ack-emoji {
-  font-size: 48px;
-  margin-bottom: 16px;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: pulseSlow 2s ease-in-out infinite;
+}
+.ack-emoji svg {
+  width: 64px;
+  height: 64px;
+  display: block;
 }
 .ack-text {
   font-size: 20px;
@@ -494,12 +548,14 @@ html, body {
 @media (min-width: 420px) {
   .home-cards { max-width: 340px; }
   .mood-card { padding: 32px 16px; min-height: 120px; }
-  .mood-emoji { font-size: 32px; }
+  .mood-emoji { width: 52px; height: 52px; }
+  .mood-emoji svg { width: 52px; height: 52px; }
 }
 
 @media (max-height: 640px) {
   .home-greeting { font-size: 20px; }
   .home-sub { margin-bottom: 28px; }
   .mood-card { padding: 16px 12px; min-height: 80px; }
-  .mood-emoji { font-size: 24px; }
+  .mood-emoji { width: 36px; height: 36px; }
+  .mood-emoji svg { width: 36px; height: 36px; }
 }

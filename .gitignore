@@ -12,3 +12,5 @@ desktop.ini
 
 # Node (in case we add a build step later)
 node_modules/
+
+.vercel
